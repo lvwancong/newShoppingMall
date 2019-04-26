@@ -68,7 +68,7 @@ router.get('/seaIs',(req,res)=>{
 /**话题日志TopicLog**/
 router.get('/TpL',(req,res)=>{
 	//查询数据库
-	sql="SELECT tname,ttime,tptop,tpeople,tcomment,tlogo,turl FROM eatery_topiclog";
+	sql = "SELECT tname,ttime,tptop,tpeople,tcomment,tlogo,turl FROM eatery_TopicLog";
 	pool.query(sql,(err,result)=>{
 		if(err){console.log(err);res.send({code:-1,msg:err.message})}
 		res.send(result);

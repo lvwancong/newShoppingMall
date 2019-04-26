@@ -10,7 +10,7 @@ router.post('/inquire',(req,res)=>{
 	//数据库查询数据
 	var sql="SELECT uname FROM eatery_user where uname=?";
 	pool.query(sql,[$uname],(err,result)=>{
-		if(err) throw err;
+		if(err){console.log(err);res.send({code:-1,msg:err.message})}
 		if(result.length>0){
 			res.send("0");
 		}else{
@@ -44,7 +44,7 @@ router.post('/reg',(req,res)=>{
 	//数据库修改数据
 	var sql="insert into eatery_user values(null,?,?,?,?,null,null,?)"
 	pool.query(sql,[$uname,$upwd,$email,$phone,$gender],(err,result)=>{
-		if(err) throw err;
+		if(err){console.log(err);res.send({code:-1,msg:err.message})}
 		res.send('1');
 	});
 });
@@ -64,7 +64,7 @@ router.post('/postlogin',(req,res)=>{
 	//查询数据库的操作
 	var sql="select * from eatery_user where uname=? and upwd=?";
 	pool.query(sql,[$uname,$upwd],(err,result)=>{
-		if(err) throw err;
+		if(err){console.log(err);res.send({code:-1,msg:err.message})}
 		if(result.length>0){
 			res.send('1');
 		}else{
@@ -109,7 +109,7 @@ router.post('/updateUser',(req,res)=>{
 		+"uname=?,upwd=?,email=?,phone=?,"
 		+"gender=? where uid=?";
 	pool.query(sql,[$uname,$upwd,$email,$phone,$gender,$uid],(err,result)=>{
-		if(err) throw err;
+		if(err){console.log(err);res.send({code:-1,msg:err.message})}
 		res.send("1");
 	});
 });

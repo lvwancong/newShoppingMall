@@ -9,7 +9,7 @@ router.get('/logotop',(req,res)=>{
 	//查询数据库
 	sql="select logo,search,optionbaricon,directionOfIndication from eatery_logo";
 	pool.query(sql,(err,result)=>{
-		if(err) throw err;
+		if(err){console.log(err);res.send({code:-1,msg:err.message})}
 		res.send(result);
 		console.log(result);
 	});
@@ -19,7 +19,7 @@ router.get('/carousetopimg',(req,res)=>{
 	//查询数据库
 	sql="select lg from eatery_cate_pic where cate_id=6";
 	pool.query(sql,(err,result)=>{
-		if(err) throw err;
+		if(err){console.log(err);res.send({code:-1,msg:err.message})}
 		res.send(result);
 		console.log(result);
 	});
@@ -29,7 +29,10 @@ router.get('/navp',(req,res)=>{
 	//查询数据库
 	sql="select md from eatery_cate_pic where cate_id=10";
 	pool.query(sql,(err,result)=>{
-		if(err) throw err;
+		if(err){
+          console.log(err);
+          res.send({code:-1,msg:err.message})
+        }
 		res.send(result);
 		console.log(result);
 	});
@@ -40,7 +43,10 @@ router.get('/egm',(req,res)=>{
 	//查询数据库
 	sql="SELECT gname,gurl,people,purl FROM eatery_gourmet_menu";
 	pool.query(sql,(err,result)=>{
-		if(err) throw err;
+		if(err){
+          console.log(err);
+          res.send({code:-1,msg:err.message})
+        }
 		res.send(result);
 		console.log(result);
 	});
@@ -51,7 +57,10 @@ router.get('/seaIs',(req,res)=>{
 	//查询数据库
 	sql="SELECT sname,speople,surl FROM eatery_SeasonalIngredients";
 	pool.query(sql,(err,result)=>{
-		if(err) throw err;
+		if(err){
+          console.log(err);
+          res.send({code:-1,msg:err.message})
+        }
 		res.send(result);
 		console.log(result);
 	});
@@ -61,7 +70,7 @@ router.get('/TpL',(req,res)=>{
 	//查询数据库
 	sql="SELECT tname,ttime,tptop,tpeople,tcomment,tlogo,turl FROM eatery_topiclog";
 	pool.query(sql,(err,result)=>{
-		if(err) throw err;
+		if(err){console.log(err);res.send({code:-1,msg:err.message})}
 		res.send(result);
 		console.log(result);
 	});
@@ -71,7 +80,7 @@ router.get('/TpLp',(req,res)=>{
 	//查询数据库
 	sql="SELECT topic,toname,topeople,tourl FROM eatery_topiclog_pic";
 	pool.query(sql,(err,result)=>{
-		if(err) throw err;
+		if(err){console.log(err);res.send({code:-1,msg:err.message})}
 		res.send(result);
 		console.log(result);
 	});
@@ -82,7 +91,7 @@ router.get('/aboutus',(req,res)=>{
 	//查询数据库
 	sql="SELECT bgimage FROM eatery_logo";
 	pool.query(sql,(err,result)=>{
-		if(err) throw err;
+		if(err){console.log(err);res.send({code:-1,msg:err.message})}
 		res.send(result);
 		console.log(result);
 	});
@@ -93,7 +102,7 @@ router.get('/MenuCarousel',(req,res)=>{
 	//查询数据库
 	sql="select mctitle,mcspan,mcurl from eatery_MenuCarousel";
 	pool.query(sql,(err,result)=>{
-		if(err) throw err;
+		if(err){console.log(err);res.send({code:-1,msg:err.message})}
 		res.send(result);
 		console.log(result);
 	});
@@ -103,7 +112,7 @@ router.get('/MenuCommonlyUsedTags',(req,res)=>{
 	//查询数据库
 	sql="select cltitle,clspan,clurl from eatery_MenuCommonlyUsedTags";
 	pool.query(sql,(err,result)=>{
-		if(err) throw err;
+		if(err){console.log(err);res.send({code:-1,msg:err.message})}
 		res.send(result);
 		console.log(result);
 	});

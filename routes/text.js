@@ -30,7 +30,7 @@ router.get('/navgoto',(req,res)=>{
     });
 });
 
-/********eatery_foodlabelnavigationpage******/
+/********eatery_FoodLabelNavigationPage******/
 
 router.get('/foodnava1',(req,res)=>{
     sql="select efnumber,eftitle from eatery_foodclassificationfamily";
@@ -43,7 +43,7 @@ router.get('/foodnava1',(req,res)=>{
 
 
 router.get('/foodnav01',(req,res)=>{
-    sql="select ftitle from eatery_foodlabelnavigationpage where efid=1";
+    sql="select ftitle from eatery_FoodLabelNavigationPage where efid=1";
     pool.query(sql,(err,result)=>{
         if(err){console.log(err);res.send({code:-1,msg:err.message})}
         res.send(result);
@@ -51,7 +51,7 @@ router.get('/foodnav01',(req,res)=>{
     });
 });
 router.get('/foodnav02',(req,res)=>{
-    sql="select ftitle from eatery_foodlabelnavigationpage where efid=2";
+    sql="select ftitle from eatery_FoodLabelNavigationPage where efid=2";
     pool.query(sql,(err,result)=>{
         if(err){console.log(err);res.send({code:-1,msg:err.message})}
         res.send(result);
@@ -59,7 +59,7 @@ router.get('/foodnav02',(req,res)=>{
     });
 });
 router.get('/foodnav03',(req,res)=>{
-    sql="select ftitle from eatery_foodlabelnavigationpage where efid=3";
+    sql="select ftitle from eatery_FoodLabelNavigationPage where efid=3";
     pool.query(sql,(err,result)=>{
         if(err){console.log(err);res.send({code:-1,msg:err.message})}
         res.send(result);
@@ -67,7 +67,7 @@ router.get('/foodnav03',(req,res)=>{
     });
 });
 router.get('/foodnav04',(req,res)=>{
-    sql="select ftitle from eatery_foodlabelnavigationpage where efid=4";
+    sql="select ftitle from eatery_FoodLabelNavigationPage where efid=4";
     pool.query(sql,(err,result)=>{
         if(err){console.log(err);res.send({code:-1,msg:err.message})}
         res.send(result);
@@ -75,14 +75,14 @@ router.get('/foodnav04',(req,res)=>{
     });
 });
 router.get('/foodnav05',(req,res)=>{
-    sql="select ftitle from eatery_foodlabelnavigationpage where efid=5";
+    sql="select ftitle from eatery_FoodLabelNavigationPage where efid=5";
     pool.query(sql,(err,result)=>{
         if(err){console.log(err);res.send({code:-1,msg:err.message})}
         res.send(result);
         // console.log(result);
 });
 });router.get('/foodnav06',(req,res)=>{
-    sql="select ftitle from eatery_foodlabelnavigationpage where efid=6";
+    sql="select ftitle from eatery_FoodLabelNavigationPage where efid=6";
     pool.query(sql,(err,result)=>{
         if(err){console.log(err);res.send({code:-1,msg:err.message})}
         res.send(result);
@@ -90,7 +90,7 @@ router.get('/foodnav05',(req,res)=>{
     });
 });
 router.get('/foodnav07',(req,res)=>{
-    sql="select ftitle from eatery_foodlabelnavigationpage where efid=7";
+    sql="select ftitle from eatery_FoodLabelNavigationPage where efid=7";
     pool.query(sql,(err,result)=>{
         if(err){console.log(err);res.send({code:-1,msg:err.message})}
         res.send(result);
@@ -98,7 +98,7 @@ router.get('/foodnav07',(req,res)=>{
     });
 });
 router.get('/foodnav08',(req,res)=>{
-    sql="select ftitle from eatery_foodlabelnavigationpage where efid=8";
+    sql="select ftitle from eatery_FoodLabelNavigationPage where efid=8";
     pool.query(sql,(err,result)=>{
         if(err){console.log(err);res.send({code:-1,msg:err.message})}
         res.send(result);

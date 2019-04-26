@@ -78,7 +78,7 @@ router.get('/TpL',(req,res)=>{
 /***话题加精TopicLogpic***/
 router.get('/TpLp',(req,res)=>{
 	//查询数据库
-	sql="SELECT topic,toname,topeople,tourl FROM eatery_topiclog_pic";
+	sql="SELECT topic,toname,topeople,tourl FROM eatery_TopicLog_pic";
 	pool.query(sql,(err,result)=>{
 		if(err){console.log(err);res.send({code:-1,msg:err.message})}
 		res.send(result);

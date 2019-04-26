@@ -33,7 +33,7 @@ router.get('/navgoto',(req,res)=>{
 /********eatery_FoodLabelNavigationPage******/
 
 router.get('/foodnava1',(req,res)=>{
-    sql="select efnumber,eftitle from eatery_foodclassificationfamily";
+    sql = "select efnumber,eftitle from eatery_Foodclassificationfamily";
     pool.query(sql,(err,result)=>{
         if(err){console.log(err);res.send({code:-1,msg:err.message})}
         res.send(result);

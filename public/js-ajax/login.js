@@ -8,7 +8,7 @@ function login(){
             var result=xhr.responseText;
             if(result==1){
                 d1.innerHTML='登录成功';
-                window.location.href='header.html';
+                window.location.href = "https://newstart.applinzi.com";
             }else if(result==0){
                 d1.innerHTML='用户名或密码错误';
             }
